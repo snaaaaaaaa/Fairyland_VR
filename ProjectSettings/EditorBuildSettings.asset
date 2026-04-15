@@ -4,5 +4,13 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
-  m_configObjects: {}
+  m_Scenes:
+  - enabled: 0
+    path: Assets/Ann-Assets/vr low fi.unity
+    guid: 7a15d20005e774bd38898f72b66bed96
+  - enabled: 1
+    path: Assets/Bo-Assets/Scenes 1/Scene 7.unity
+    guid: 7a9f3024d00734f8bb3976681a439de3
+  m_configObjects:
+    Unity.XR.PXR.Settings: {fileID: 11400000, guid: 481f6a6f1d5487043b88940e8adfd3ea, type: 2}
+    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: fbb8824b8d5682b46bc5023dc34165f9, type: 2}
