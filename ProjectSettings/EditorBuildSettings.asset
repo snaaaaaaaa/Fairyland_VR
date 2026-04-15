@@ -11,9 +11,12 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Bo-Assets/Scenes 1/Scene 7.unity
     guid: 7a9f3024d00734f8bb3976681a439de3
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/ForestScene.unity
     guid: 4d51911a457b45143801d4d07e827e8c
+  - enabled: 1
+    path: Assets/Alyssa-Assets/Scenes/BattleScene.unity
+    guid: 289291526fc3e0e4da94895b22e9c22d
   m_configObjects:
     Unity.XR.PXR.Settings: {fileID: 11400000, guid: 481f6a6f1d5487043b88940e8adfd3ea, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: fbb8824b8d5682b46bc5023dc34165f9, type: 2}
