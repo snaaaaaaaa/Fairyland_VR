@@ -12,15 +12,16 @@ public class ColliderTrigger : MonoBehaviour
 
     //public scene varaibales
     public string NextSceneName;
-    public TextMeshPro textMeshPro;
+    //public TextMeshPro textMeshPro;
    
     void Start() {
-          textMeshPro.text = NextSceneName;
+          //textMeshPro.text = NextSceneName;
      }
 
     // This function is automatically called when another collider enters this trigger
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log("trigger");
         // Check if the object entering is the player camera
         if (other.CompareTag("MainCamera") || other.name.Contains("Camera"))
         {
