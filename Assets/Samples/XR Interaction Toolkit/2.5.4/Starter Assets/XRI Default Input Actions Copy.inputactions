@@ -2622,6 +2622,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "LandingPageButton",
+                    "type": "Button",
+                    "id": "93555315-c3b8-4f54-8676-1f921cfe5be2",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -2666,6 +2675,28 @@
                     "processors": "",
                     "groups": "",
                     "action": "WandRightTrigger",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "2f302562-5a43-4d90-bbd1-85fd0f75a7d8",
+                    "path": "<PXR_Controller>{LeftHand}/secondaryButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "LandingPageButton",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "751d814d-9ad2-4db8-a58f-5118b3a0a60e",
+                    "path": "<XRSimulatedController>{RightHand}/secondaryButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "LandingPageButton",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

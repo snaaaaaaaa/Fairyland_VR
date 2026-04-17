@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.058552876, g: 0.091589026, b: 0.13658199, a: 1}
+  m_IndirectSpecularColor: {r: 0.06025052, g: 0.093197934, b: 0.13806072, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2086,6 +2086,91 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!1001 &1351900055
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3669352958851680159, guid: d90ab33b5c2cefc48aa475081def681e, type: 3}
+      propertyPath: m_Actions
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3669352958851680159, guid: d90ab33b5c2cefc48aa475081def681e, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3669352958851680159, guid: d90ab33b5c2cefc48aa475081def681e, type: 3}
+      propertyPath: m_DefaultActionMap
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3669352958851680159, guid: d90ab33b5c2cefc48aa475081def681e, type: 3}
+      propertyPath: m_DefaultControlScheme
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3669352958851680159, guid: d90ab33b5c2cefc48aa475081def681e, type: 3}
+      propertyPath: m_NotificationBehavior
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3669352958851680159, guid: d90ab33b5c2cefc48aa475081def681e, type: 3}
+      propertyPath: m_ActionEvents.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4429796911172065268, guid: d90ab33b5c2cefc48aa475081def681e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4429796911172065268, guid: d90ab33b5c2cefc48aa475081def681e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4429796911172065268, guid: d90ab33b5c2cefc48aa475081def681e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4429796911172065268, guid: d90ab33b5c2cefc48aa475081def681e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4429796911172065268, guid: d90ab33b5c2cefc48aa475081def681e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4429796911172065268, guid: d90ab33b5c2cefc48aa475081def681e, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4429796911172065268, guid: d90ab33b5c2cefc48aa475081def681e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4429796911172065268, guid: d90ab33b5c2cefc48aa475081def681e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4429796911172065268, guid: d90ab33b5c2cefc48aa475081def681e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4429796911172065268, guid: d90ab33b5c2cefc48aa475081def681e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8023022670261550011, guid: d90ab33b5c2cefc48aa475081def681e, type: 3}
+      propertyPath: m_Name
+      value: LandingSceneButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 8669314409831796771, guid: d90ab33b5c2cefc48aa475081def681e, type: 3}
+      propertyPath: landingSceneReturnButton
+      value: 
+      objectReference: {fileID: 2911421272650680152, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d90ab33b5c2cefc48aa475081def681e, type: 3}
 --- !u!1001 &1368504539
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3418,6 +3503,10 @@ MonoBehaviour:
         m_CallState: 1
     m_ActionId: 4b921432-e15d-4c37-9eaa-1d499f7fbcdb
     m_ActionName: MyActionMap/WandRightTrigger
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 93555315-c3b8-4f54-8676-1f921cfe5be2
+    m_ActionName: MyActionMap/LandingPageButton
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: Generic XR Controller
   m_DefaultActionMap: XRI Head
@@ -3536,3 +3625,4 @@ SceneRoots:
   - {fileID: 1982762815}
   - {fileID: 1712398278}
   - {fileID: 459899673}
+  - {fileID: 1351900055}
