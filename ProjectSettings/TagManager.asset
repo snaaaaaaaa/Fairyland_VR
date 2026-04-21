@@ -3,12 +3,16 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Spell
+  - Pollen
+  - Food
+  - flower
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - glass
   - Water
   - UI
   - 

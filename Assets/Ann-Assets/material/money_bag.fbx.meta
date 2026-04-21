@@ -3,7 +3,17 @@ guid: c43167e462739a74888a223edd2de279
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: assets_texture
+    second: {fileID: 2100000, guid: 56877963b9b9b7d4d85f6d628fe433a5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: coin
+    second: {fileID: 2100000, guid: c8a6b32509a554b4e8d669ba121acb4a, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

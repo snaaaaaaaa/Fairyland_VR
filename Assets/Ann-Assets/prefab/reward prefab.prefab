@@ -80,9 +80,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7635826562936255635, guid: 03bbec7287965e24f86a32317b5cfb8c, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 7fbeac0bea0134a4687ee8d71ec74e1b, type: 2}
     - target: {fileID: 919132149155446097, guid: 03bbec7287965e24f86a32317b5cfb8c, type: 3}
       propertyPath: m_Name
       value: 1_feather2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1151388028547126963, guid: 03bbec7287965e24f86a32317b5cfb8c, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1151388028547126963, guid: 03bbec7287965e24f86a32317b5cfb8c, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1151388028547126963, guid: 03bbec7287965e24f86a32317b5cfb8c, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -97,6 +113,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 03bbec7287965e24f86a32317b5cfb8c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4663011095685415358}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 03bbec7287965e24f86a32317b5cfb8c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5206902685228000168}
   m_SourcePrefab: {fileID: 100100000, guid: 03bbec7287965e24f86a32317b5cfb8c, type: 3}
 --- !u!4 &2869587686712140066 stripped
 Transform:
@@ -306,7 +325,33 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
-  m_Height: 1
+  m_Radius: 5
+  m_Height: 10
   m_Direction: 1
+  m_Center: {x: 0, y: 1.23, z: 0}
+--- !u!143 &5206902685228000168
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3213602422677027736}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 0
+  serializedVersion: 3
+  m_Height: 2
+  m_Radius: 1
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
