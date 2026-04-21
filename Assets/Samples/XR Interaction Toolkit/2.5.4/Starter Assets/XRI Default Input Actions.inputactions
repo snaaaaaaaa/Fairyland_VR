@@ -2600,6 +2600,45 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "MyActionMap",
+            "id": "709e47f3-af61-4d16-9451-e6a9ecc27435",
+            "actions": [
+                {
+                    "name": "LandingPageButton",
+                    "type": "Button",
+                    "id": "d858360c-3dc1-4c3c-a4f8-c8ecfa25e209",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "76cf22ae-75fa-46df-aa59-666a5897f2f0",
+                    "path": "<XRSimulatedController>/secondaryButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "LandingPageButton",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ef9d570c-7495-4327-aae6-306197b3b1b1",
+                    "path": "<PXR_Controller>/secondaryButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "LandingPageButton",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": [
