@@ -232,6 +232,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4693961395166714555, guid: 2324e1200b6b06145b9cd709818e4115, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7313654230448209575, guid: 2324e1200b6b06145b9cd709818e4115, type: 3}
       propertyPath: m_Name
       value: PICO XR Setup
