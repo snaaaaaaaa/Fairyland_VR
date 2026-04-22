@@ -5,13 +5,16 @@ TagManager:
   serializedVersion: 2
   tags:
   - Spell
+  - Pollen
+  - Food
+  - flower
   - Mushroom
   - Enemy
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - glass
   - Water
   - UI
   - 

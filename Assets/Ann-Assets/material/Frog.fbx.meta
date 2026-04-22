@@ -3,7 +3,32 @@ guid: 59b92630640ee4eae9729532c850d322
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Frog_Model_frog_underbelly
+    second: {fileID: 2100000, guid: 53ae1fefdbc8d1747b036453a6463878, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Frog_Model_lambert2
+    second: {fileID: 2100000, guid: fb9af56af5375fb4886dca59b4ee7607, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Frog_Model_lambert3
+    second: {fileID: 2100000, guid: b6ca4ca18c7c27b4c86d9a02799b2c72, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Frog_Model_lambert5
+    second: {fileID: 2100000, guid: 85be34e831e30ea418186f4388829148, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert1
+    second: {fileID: 2100000, guid: 2d2de615450fd584caa38c6d1c9032ef, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
