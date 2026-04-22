@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.055588603, g: 0.08968713, b: 0.135889, a: 1}
+  m_IndirectSpecularColor: {r: 0.0052651484, g: 0.0092110755, b: 0.016895512, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -449,7 +449,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 5800783002346281824, guid: 2a6ccb414e540744d86b17e8e80f8c94, type: 3}
   enemiesDefeated: 0
-  enemyChance: 300
+  enemyChance: 200
   WinLoseText: {fileID: 208203762}
   playerHits: 0
 --- !u!4 &203210882
@@ -1051,7 +1051,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6598815579406187037, guid: 18ddb545287c546e19cc77dc9fbb2189, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2379,8 +2379,8 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 0.97735846, g: 0.9426801, b: 0.44810957, a: 1}
-  m_Intensity: 7
-  m_Range: 10
+  m_Intensity: 3
+  m_Range: 22.97
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -2471,11 +2471,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4134505312059479865, guid: 2324e1200b6b06145b9cd709818e4115, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4
+      value: 1.68
       objectReference: {fileID: 0}
     - target: {fileID: 4134505312059479865, guid: 2324e1200b6b06145b9cd709818e4115, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -0.41
       objectReference: {fileID: 0}
     - target: {fileID: 4134505312059479865, guid: 2324e1200b6b06145b9cd709818e4115, type: 3}
       propertyPath: m_LocalRotation.w
