@@ -8,7 +8,7 @@ PlayerSettings:
   AndroidProfiler: 0
   AndroidFilterTouchesWhenObscured: 0
   AndroidEnableSustainedPerformanceMode: 0
-  defaultScreenOrientation: 4
+  defaultScreenOrientation: 3
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 60
@@ -47,7 +47,7 @@ PlayerSettings:
   defaultScreenWidthWeb: 960
   defaultScreenHeightWeb: 600
   m_StereoRenderingPath: 0
-  m_ActiveColorSpace: 0
+  m_ActiveColorSpace: 1
   unsupportedMSAAFallback: 0
   m_SpriteBatchVertexThreshold: 300
   m_MTRendering: 1
@@ -140,7 +140,10 @@ PlayerSettings:
   visionOSBundleVersion: 1.0
   tvOSBundleVersion: 1.0
   bundleVersion: 0.1
-  preloadedAssets: []
+  preloadedAssets:
+  - {fileID: 3943759626415394483, guid: fbb8824b8d5682b46bc5023dc34165f9, type: 2}
+  - {fileID: 11400000, guid: 481f6a6f1d5487043b88940e8adfd3ea, type: 2}
+  - {fileID: -2163110792323361328, guid: 679e30c59d4989947981cc64e5611a02, type: 2}
   metroInputSource: 0
   wsaTransparentSwapchain: 0
   m_HolographicPauseOnTrackingLoss: 1
@@ -170,7 +173,7 @@ PlayerSettings:
   AndroidBundleVersionCode: 1
   AndroidMinSdkVersion: 29
   AndroidTargetSdkVersion: 0
-  AndroidPreferredInstallLocation: 1
+  AndroidPreferredInstallLocation: 0
   aotOptions: 
   stripEngineCode: 1
   iPhoneStrippingLevel: 0
@@ -981,7 +984,13 @@ PlayerSettings:
   windowsGamepadBackendHint: 0
   cloudProjectId: 6e463ea7-870f-44eb-bf0e-814b2f68e31d
   framebufferDepthMemorylessMode: 0
-  qualitySettingsNames: []
+  qualitySettingsNames:
+  - Very Low
+  - Low
+  - Medium
+  - High
+  - Very High
+  - Ultra
   projectName: Fairyland_VR
   organizationId: smote
   cloudEnabled: 0

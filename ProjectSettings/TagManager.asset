@@ -8,6 +8,8 @@ TagManager:
   - Pollen
   - Food
   - flower
+  - Mushroom
+  - Enemy
   layers:
   - Default
   - TransparentFX

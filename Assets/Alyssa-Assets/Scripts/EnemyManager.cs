@@ -6,12 +6,27 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class EnemyManager : MonoBehaviour
 {
     public GameObject enemyPrefab;
     float randRad;
     float randDist;
+    Vector3 enemyTarget;
+
+    int enemiesToDefeated = 15;
+    public int enemiesDefeated = 0;
+    public int enemyChance = 200;
+
+    public TMP_Text WinLoseText;
+
+    bool gameOver = false;
+
+
+
+    int playerLives = 5;
+    public int playerHits = 0;
 
     // Update is called once per frame
     void Update()
@@ -24,17 +39,53 @@ public class EnemyManager : MonoBehaviour
 
         // Set the coordinates for new potential spawning enemy
         transform.position = new Vector3(Mathf.Cos(randRad), 0, Mathf.Sin(randRad)) * randDist;
-        
-        SpawnEnemy();
+
+        if (!gameOver)
+        {
+            SpawnEnemy();
+        }
+        else
+        {
+            GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+            foreach (GameObject enemy in enemies)
+            {
+                Destroy(enemy);
+            }
+        }
+
+        Debug.Log(enemiesDefeated);
+
+        if (enemiesDefeated >= enemiesToDefeated)
+        {
+            Debug.Log("You win!");
+            WinLoseText.text = "Congratulations! You defeated 15 enemies!";
+            gameOver = true;
+
+        }
+
+        if (playerHits >= playerLives)
+        {
+            Debug.Log("You lose!");
+            WinLoseText.text = "You were attacked by too many enemies!";
+            gameOver = true;
+        }
+
+
     }
 
     void SpawnEnemy()
     {
         // 1 in 50 chance of spawing enemy
-        int rand = Random.Range(1, 100);
-        if(rand == 1)
+        int rand = Random.Range(1, enemyChance);
+        enemyTarget.Set(0, 1, 0);
+
+        if (rand == 1)
         {
-            Instantiate(enemyPrefab, transform.position, Quaternion.identity);
+            // Calculate direction to (0, 0) and create rotation
+            Vector3 directionToCenter = enemyTarget - transform.position;
+            Quaternion facingRotation = Quaternion.LookRotation(directionToCenter);
+
+            Instantiate(enemyPrefab, transform.position, facingRotation);
         }
     }
 }
