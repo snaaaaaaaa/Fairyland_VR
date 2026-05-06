@@ -9,6 +9,10 @@ public class PollenTarget : MonoBehaviour
     [SerializeField] private GameObject pollenPrefab;
     [SerializeField] private Transform pollenSpawnPoint;
 
+    [Header("Bloom Audio")]
+    [SerializeField] private AudioSource bloomAudioSource;
+    [SerializeField] private AudioClip bloomSound;
+
     private void Start()
     {
         animator = GetComponent<Animator>();
@@ -27,6 +31,11 @@ public class PollenTarget : MonoBehaviour
         {
             Debug.LogError("No pollen spawn point assigned.");
         }
+
+        if (bloomAudioSource == null)
+        {
+            Debug.LogError("No bloom AudioSource assigned.");
+        }
     }
 
     private void OnTriggerStay(Collider other)
@@ -44,6 +53,12 @@ public class PollenTarget : MonoBehaviour
         if (!grabInteractable.isSelected)
         {
             animator.SetTrigger("Bloom");
+
+            if (bloomAudioSource != null && bloomSound != null)
+            {
+                bloomAudioSource.PlayOneShot(bloomSound);
+            }
+
             hasBloomed = true;
 
             SpawnNewPollen();
@@ -52,22 +67,22 @@ public class PollenTarget : MonoBehaviour
     }
 
     private void SpawnNewPollen()
-{
-    if (pollenPrefab == null || pollenSpawnPoint == null) return;
-
-    GameObject newPollen = Instantiate(
-        pollenPrefab,
-        pollenSpawnPoint.position,
-        pollenSpawnPoint.rotation
-    );
-
-    Rigidbody rb = newPollen.GetComponent<Rigidbody>();
-    if (rb != null)
     {
-        rb.velocity = Vector3.zero;
-        rb.angularVelocity = Vector3.zero;
-        rb.useGravity = false;
-        rb.isKinematic = true;
+        if (pollenPrefab == null || pollenSpawnPoint == null) return;
+
+        GameObject newPollen = Instantiate(
+            pollenPrefab,
+            pollenSpawnPoint.position,
+            pollenSpawnPoint.rotation
+        );
+
+        Rigidbody rb = newPollen.GetComponent<Rigidbody>();
+        if (rb != null)
+        {
+            rb.velocity = Vector3.zero;
+            rb.angularVelocity = Vector3.zero;
+            rb.useGravity = false;
+            rb.isKinematic = true;
+        }
     }
-}
 }
