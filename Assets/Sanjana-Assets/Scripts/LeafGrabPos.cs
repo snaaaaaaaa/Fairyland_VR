@@ -8,6 +8,9 @@ public class FacePlayerOnGrab : MonoBehaviour
 
     private bool isGrabbed = false;
 
+    [Header("Outline Object (child mesh)")]
+    public GameObject outlineObject;
+
     void Awake()
     {
         grabInteractable = GetComponent<XRGrabInteractable>();
@@ -20,22 +23,33 @@ public class FacePlayerOnGrab : MonoBehaviour
     void OnGrab(SelectEnterEventArgs args)
     {
         isGrabbed = true;
+
+        if (outlineObject != null)
+            outlineObject.SetActive(false);
     }
 
     void OnRelease(SelectExitEventArgs args)
     {
         isGrabbed = false;
+
+        if (outlineObject != null)
+            outlineObject.SetActive(true);
     }
 
     void Update()
     {
         if (!isGrabbed) return;
 
-        Vector3 directionToPlayer = (playerCamera.position - transform.position).normalized;
+        Vector3 directionToPlayer =
+            (playerCamera.position - transform.position).normalized;
 
-        // We want the object's bottom (-up) to face the player
-        Quaternion targetRotation = Quaternion.FromToRotation(-transform.up, directionToPlayer) * transform.rotation;
+        Quaternion targetRotation =
+            Quaternion.FromToRotation(-transform.up, directionToPlayer) * transform.rotation;
 
-        transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * 10f);
+        transform.rotation = Quaternion.Slerp(
+            transform.rotation,
+            targetRotation,
+            Time.deltaTime * 10f
+        );
     }
 }
