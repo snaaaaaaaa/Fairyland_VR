@@ -94,7 +94,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 014dc786df83741e2b5673306f8cbc9b, type: 2}
+  - {fileID: 2100000, guid: c9ff8fd2646f5473ba9e61ef8ada1964, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -219,6 +219,17 @@ MonoBehaviour:
   pollenSpawnPoint: {fileID: 7628339389949881972}
   bloomAudioSource: {fileID: 4482253477123783857}
   bloomSound: {fileID: 8300000, guid: 04653f9d9e37c4cb88ecdeec7f1dbf7d, type: 3}
+  petalRenderers:
+  - {fileID: 5824898494691359329}
+  - {fileID: 8849935952954950730}
+  - {fileID: 9202258464908836267}
+  - {fileID: 1134614105290671280}
+  bloomColours:
+  - {r: 1, g: 0.45, b: 0.75, a: 1}
+  - {r: 1, g: 0.85, b: 0.25, a: 1}
+  - {r: 0.45, g: 0.75, b: 1, a: 1}
+  - {r: 0.75, g: 0.45, b: 1, a: 1}
+  - {r: 1, g: 0.55, b: 0.25, a: 1}
 --- !u!95 &5105082379937761440
 Animator:
   serializedVersion: 5
@@ -601,7 +612,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 014dc786df83741e2b5673306f8cbc9b, type: 2}
+  - {fileID: 2100000, guid: c9ff8fd2646f5473ba9e61ef8ada1964, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -813,7 +824,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 014dc786df83741e2b5673306f8cbc9b, type: 2}
+  - {fileID: 2100000, guid: c9ff8fd2646f5473ba9e61ef8ada1964, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -984,7 +995,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 014dc786df83741e2b5673306f8cbc9b, type: 2}
+  - {fileID: 2100000, guid: c9ff8fd2646f5473ba9e61ef8ada1964, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
