@@ -296,6 +296,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2767906520806278548, guid: 5f6a76d7072dda54ca958c08d08ab3d7, type: 3}
+      propertyPath: ShapeModule.type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2767906520806278548, guid: 5f6a76d7072dda54ca958c08d08ab3d7, type: 3}
       propertyPath: TrailModule.mode
       value: 0
       objectReference: {fileID: 0}
@@ -304,8 +308,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2767906520806278548, guid: 5f6a76d7072dda54ca958c08d08ab3d7, type: 3}
+      propertyPath: ShapeModule.m_Texture
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2767906520806278548, guid: 5f6a76d7072dda54ca958c08d08ab3d7, type: 3}
       propertyPath: TrailModule.textureMode
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2767906520806278548, guid: 5f6a76d7072dda54ca958c08d08ab3d7, type: 3}
+      propertyPath: ShapeModule.radiusThickness
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2767906520806278548, guid: 5f6a76d7072dda54ca958c08d08ab3d7, type: 3}
       propertyPath: InitialModule.startColor.maxColor.b
@@ -315,10 +327,6 @@ PrefabInstance:
       propertyPath: InitialModule.startColor.maxColor.g
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 2767906520806278548, guid: 5f6a76d7072dda54ca958c08d08ab3d7, type: 3}
-      propertyPath: InitialModule.startColor.maxColor.r
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5762171920212473697, guid: 5f6a76d7072dda54ca958c08d08ab3d7, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -326,10 +334,6 @@ PrefabInstance:
     - target: {fileID: 5762171920212473697, guid: 5f6a76d7072dda54ca958c08d08ab3d7, type: 3}
       propertyPath: m_RenderMode
       value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 5762171920212473697, guid: 5f6a76d7072dda54ca958c08d08ab3d7, type: 3}
-      propertyPath: m_Materials.Array.size
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5762171920212473697, guid: 5f6a76d7072dda54ca958c08d08ab3d7, type: 3}
       propertyPath: m_Materials.Array.data[0]

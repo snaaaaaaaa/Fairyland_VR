@@ -20,6 +20,7 @@ public class EnemyManager : MonoBehaviour
     public int enemyChance = 200;
 
     public TMP_Text WinLoseText;
+    public GameObject ExitPortal;
 
     bool gameOver = false;
 
@@ -51,6 +52,9 @@ public class EnemyManager : MonoBehaviour
             {
                 Destroy(enemy);
             }
+
+            ExitPortal.SetActive(true);
+
         }
 
         Debug.Log(enemiesDefeated);
