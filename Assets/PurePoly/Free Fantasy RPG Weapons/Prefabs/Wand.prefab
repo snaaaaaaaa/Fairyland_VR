@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7647500670483051834}
   - component: {fileID: 5604050369503347185}
   m_Layer: 0
-  m_Name: PP_Theme_08_Wand_001
+  m_Name: Wand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
