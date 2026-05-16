@@ -7,10 +7,15 @@ public class LandingSceneEventManager : MonoBehaviour
 {
     public static LandingSceneEventManager Instance { get; private set; }
 
+    public LandingSceneObjects LandingSceneObjects;
+
     public GameObject PICO;
 
-    private const string LandingCountKey = "LandingScene_OpenCount";
-    private int lastIncrementFrame = -1;
+    // Tracks whether this is the first time the Landing scene has been opened during this app run.
+    public bool firstTimeLanding { get; private set; } = true;
+    private static bool hasOpenedLandingBefore = false;
+
+    // public GameObject wand;
 
     private void Awake()
     {
@@ -23,10 +28,9 @@ public class LandingSceneEventManager : MonoBehaviour
 
         Instance = this;
         DontDestroyOnLoad(gameObject);
-
-        // Listen for both sceneLoaded and activeSceneChanged - use frame check to avoid double-counting.
+        // Listen for sceneLoaded to detect when LandingScene opens
         SceneManager.sceneLoaded += OnSceneLoaded;
-        SceneManager.activeSceneChanged += OnActiveSceneChanged;
+
     }
 
     private void OnDestroy()
@@ -34,54 +38,82 @@ public class LandingSceneEventManager : MonoBehaviour
         if (Instance == this)
         {
             SceneManager.sceneLoaded -= OnSceneLoaded;
-            SceneManager.activeSceneChanged -= OnActiveSceneChanged;
         }
     }
 
-    public void Start()
-    {
-        StartCoroutine(LoadMainMenuScene());
-    }
 
-    private IEnumerator LoadMainMenuScene()
-    {
-        // placeholder coroutine to preserve original behavior.
-        // add your actual scene-loading logic here if needed.
-        yield return null;
-    }
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         if (scene.name == "LandingScene")
         {
-            IncrementLandingOpenCount();
+            // Runtime-only: determine first open during this app run
+            if (!hasOpenedLandingBefore)
+            {
+                firstTimeLanding = true;
+                hasOpenedLandingBefore = true;
+            }
+            else
+            {
+                firstTimeLanding = false;
+            }
         }
-    }
-
-    private void OnActiveSceneChanged(Scene previous, Scene next)
-    {
-        if (next.name == "LandingScene")
+        // Ensure PICO is assigned by searching for a Player object if not set
+        if (PICO == null)
         {
-            IncrementLandingOpenCount();
+            GameObject player = GameObject.Find("Player");
+            if (player == null)
+            {
+                try
+                {
+                    player = GameObject.FindWithTag("Player");
+                }
+                catch
+                {
+                    player = null;
+                }
+            }
+
+            if (player != null)
+            {
+                PICO = player;
+            }
         }
-    }
 
-    private void IncrementLandingOpenCount()
-    {
-        // avoid double increment if multiple callbacks happen in same frame
-        if (Time.frameCount == lastIncrementFrame) return;
 
-        int count = PlayerPrefs.GetInt(LandingCountKey, 0) + 1;
-        PlayerPrefs.SetInt(LandingCountKey, count);
-        PlayerPrefs.Save();
-        lastIncrementFrame = Time.frameCount;
+        // if (wand == null)
+        // {
+        //     GameObject wandObject = GameObject.Find("Wand");
+        //     if (wandObject == null)
+        //     {
+        //         try
+        //         {
+        //             wandObject = GameObject.FindWithTag("Wand");
+        //         }
+        //         catch
+        //         {
+        //             wandObject = null;
+        //         }
+        //     }
 
-        Debug.Log($"LandingScene opened {count} time(s).");
-    }
+        //     if (wandObject != null)
+        //     {
+        //         wand = wandObject;
+        //     }
+        // }
 
-    // Public accessor
-    public int GetLandingSceneOpenCount()
-    {
-        return PlayerPrefs.GetInt(LandingCountKey, 0);
+
+
+        // If this is not the first time, apply non-first-open behavior
+        if (!firstTimeLanding && PICO != null)
+        {
+            PICO.transform.position = new Vector3(-1.04f, 0, 1.7f);
+            LandingSceneObjects.enableWand(true);
+        }
+        else
+        {
+            // Ensure wand is disabled on first open
+            LandingSceneObjects.enableWand(false);
+        }
     }
 }

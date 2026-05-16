@@ -8,6 +8,8 @@ TagManager:
   - Pollen
   - Food
   - flower
+  - Wand
+  - RayInteractor
   layers:
   - Default
   - TransparentFX
