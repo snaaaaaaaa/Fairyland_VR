@@ -10,6 +10,8 @@ public class animalfeeding : MonoBehaviour
 
     // Optional: Add a reference to your animal's animator
     public Animator animalAnimator;
+    public AudioSource audioSource;
+    public AudioClip eatingSound;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -22,11 +24,13 @@ public class animalfeeding : MonoBehaviour
                 animalAnimator.SetTrigger("Eat");
             }
 
+            if (audioSource != null && eatingSound != null)
+                audioSource.PlayOneShot(eatingSound);
             // 2. Destroy the food item
             Destroy(other.gameObject);
 
             // 3. Optional: Play eating sound
-          //  Debug.Log("Animal ate: " + other.name);
+          Debug.Log("Animal ate: " + other.name);
         }
     }
     public void SpawnReward()
