@@ -11,6 +11,8 @@ TagManager:
   - Mushroom
   - Enemy
   - Grass
+  - Wand
+  - RayInteractor
   layers:
   - Default
   - TransparentFX
