@@ -8,6 +8,7 @@ using MiVRy;
 public class GestureEventProcessor : MonoBehaviour
 {
     public MagicLine magicLine;
+    public Tutorial tutorial;
 
     // Start is called before the first frame update
     void Start()
@@ -15,6 +16,11 @@ public class GestureEventProcessor : MonoBehaviour
         if (magicLine == null)
         {
             magicLine = GetComponent<MagicLine>();
+        }
+
+        if (tutorial == null)
+        {
+            tutorial = FindObjectOfType<Tutorial>();
         }
     }
 
@@ -46,10 +52,17 @@ public class GestureEventProcessor : MonoBehaviour
             switch (gestureCompletionData.gestureName)
             {
                 case "Loop":
+                    if (tutorial != null)
+                    {
+                        tutorial.OnSpellGestureCompleted();
+
+                        tutorial.OnCircleGestureCompleted();
+                    }
+
                     if (magicLine != null)
                     {
-                        magicLine.ShootSingleProjectile();
-                        Debug.Log("called projectile");
+                        magicLine.ShootCircleProjectile();
+                        Debug.Log("called circle projectile");
                     }
                     else
                     {
@@ -58,22 +71,24 @@ public class GestureEventProcessor : MonoBehaviour
                     break;
 
                 case "Shake":
+                    if (tutorial != null)
+                    {
+                        tutorial.OnSpellGestureCompleted();
+
+                    }
+
                     break;
 
                 case "SwipeLeft":
-                if (magicLine != null)
-                    {
-                        magicLine.ShootFanProjectile();
-                        Debug.Log("called projectile");
-                    }
-                    else
-                    {
-                        Debug.LogError("MagicLine reference is missing on GestureEventProcessor.");
-                    }
-                    break;
-                
                 case "SwipeRight":
-                if (magicLine != null)
+                    if (tutorial != null)
+                    {
+                        tutorial.OnSpellGestureCompleted();
+
+                        tutorial.OnLineGestureCompleted();
+                    }
+
+                    if (magicLine != null)
                     {
                         magicLine.ShootFanProjectile();
                         Debug.Log("called projectile");
@@ -83,7 +98,7 @@ public class GestureEventProcessor : MonoBehaviour
                         Debug.LogError("MagicLine reference is missing on GestureEventProcessor.");
                     }
                     break;
-                   
+
             }
         }
 
@@ -92,6 +107,11 @@ public class GestureEventProcessor : MonoBehaviour
         else
         {
             Debug.Log("Breh");
+            if (tutorial != null)
+            {
+                tutorial.OnSpellGestureCompleted();
+
+            }
         }
     }
 }

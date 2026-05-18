@@ -10,7 +10,13 @@ using TMPro;
 
 public class EnemyManager : MonoBehaviour
 {
-    public GameObject enemyPrefab;
+    public GameObject groundEnemyPrefab;
+    public GameObject flyingEnemyPrefab;
+    public GameObject[] groundEnemyPrefabs;
+    public GameObject[] flyingEnemyPrefabs;
+    public float flyingSpawnHeight = 10f;
+    public float flyingHeightVariance = 2f;
+    public bool spawnEnabled = false;
     float randRad;
     float randDist;
     Vector3 enemyTarget;
@@ -36,16 +42,16 @@ public class EnemyManager : MonoBehaviour
         randRad = Random.Range(0, Mathf.PI * 2);
 
         // Set a random distance that will be within a particular range
-        randDist = Random.Range(20, 30);
+        randDist = Random.Range(30, 40);
 
         // Set the coordinates for new potential spawning enemy
         transform.position = new Vector3(Mathf.Cos(randRad), 0, Mathf.Sin(randRad)) * randDist;
 
-        if (!gameOver)
+        if (!gameOver && spawnEnabled)
         {
             SpawnEnemy();
         }
-        else
+        else if (gameOver)
         {
             GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
             foreach (GameObject enemy in enemies)
@@ -79,17 +85,61 @@ public class EnemyManager : MonoBehaviour
 
     void SpawnEnemy()
     {
-        // 1 in 50 chance of spawing enemy
+        // 1 in enemyChance chance of spawning an enemy
         int rand = Random.Range(1, enemyChance);
         enemyTarget.Set(0, 1, 0);
 
-        if (rand == 1)
+        if (rand != 1)
         {
-            // Calculate direction to (0, 0) and create rotation
-            Vector3 directionToCenter = enemyTarget - transform.position;
-            Quaternion facingRotation = Quaternion.LookRotation(directionToCenter);
-
-            Instantiate(enemyPrefab, transform.position, facingRotation);
+            return;
         }
+
+        bool spawnFlying = Random.value < 0.5f;
+        GameObject prefabToSpawn = null;
+
+        if (spawnFlying)
+        {
+            if (flyingEnemyPrefabs != null && flyingEnemyPrefabs.Length > 0)
+            {
+                prefabToSpawn = flyingEnemyPrefabs[Random.Range(0, flyingEnemyPrefabs.Length)];
+            }
+            else
+            {
+                prefabToSpawn = flyingEnemyPrefab;
+            }
+        }
+        else
+        {
+            if (groundEnemyPrefabs != null && groundEnemyPrefabs.Length > 0)
+            {
+                prefabToSpawn = groundEnemyPrefabs[Random.Range(0, groundEnemyPrefabs.Length)];
+            }
+            else
+            {
+                prefabToSpawn = groundEnemyPrefab;
+            }
+        }
+
+        if (prefabToSpawn == null)
+        {
+            Debug.LogWarning("No enemy prefab set for spawning.");
+            return;
+        }
+
+        Vector3 spawnPosition = transform.position;
+        if (spawnFlying)
+        {
+            float randomHeight = flyingSpawnHeight + Random.Range(-flyingHeightVariance, flyingHeightVariance);
+            spawnPosition.y = randomHeight;
+        }
+        else
+        {
+            spawnPosition.y = 0f;
+        }
+
+        Vector3 directionToCenter = enemyTarget - spawnPosition;
+        Quaternion facingRotation = Quaternion.LookRotation(directionToCenter);
+
+        Instantiate(prefabToSpawn, spawnPosition, facingRotation);
     }
 }
