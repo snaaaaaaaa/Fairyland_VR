@@ -49,7 +49,7 @@ public class ActivateMagicCircle : MonoBehaviour
 
             magicCircle.SetActive(true);
             SetWandMaterial(magicWandActiveMaterial);
-            // magicWandTrail.SetActive(true);
+             magicWandTrail.SetActive(true);
 
             // MiVRy.OnInputAction_RightTrigger();
 
@@ -59,7 +59,7 @@ public class ActivateMagicCircle : MonoBehaviour
         {
             magicCircle.SetActive(false);
             SetWandMaterial(magicWandInactiveMaterial);
-            // magicWandTrail.SetActive(false);
+             magicWandTrail.SetActive(false);
 
 
 

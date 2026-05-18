@@ -8,6 +8,9 @@ TagManager:
   - Pollen
   - Food
   - flower
+  - Mushroom
+  - Enemy
+  - Grass
   - Wand
   - RayInteractor
   layers:

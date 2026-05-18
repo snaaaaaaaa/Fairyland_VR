@@ -1,14 +1,22 @@
 
 using UnityEngine;
+// using static EnemyManager;
 
 public class EnemyMove : MonoBehaviour
 {
-    public float speed = 1f;
+    public float speed = 1.5f;
 
+    public EnemyManager enemyManager;
     Vector3 targetPosition;
+    private bool hasBeenHit = false;
 
     void Start()
     {
+        // Find the EnemyManager in the scene if not already assigned
+        if (enemyManager == null)
+        {
+            enemyManager = FindObjectOfType<EnemyManager>();
+        }
         targetPosition.Set(0, 1, 0);
     }
 
@@ -21,11 +29,42 @@ public class EnemyMove : MonoBehaviour
     // if enemy detects it has been hit it will destroy itself
     private void OnTriggerEnter(Collider other)
     {
+        // Prevent counting the same enemy multiple times
+        if (hasBeenHit)
+            return;
+
+        Debug.Log("enemy hit");
         // Check if the object entering is the player camera
-        if ( other.name.Contains("Projectile"))
+        if (other.name.Contains("Projectile"))
         {
             Debug.Log("Kill yourself now");
-            Destroy (gameObject);
+            hasBeenHit = true;
+            if (enemyManager != null)
+            {
+                enemyManager.enemiesDefeated++;
+            }
+            else
+            {
+                Debug.LogError("enemyManager is null!");
+            }
+            Destroy(gameObject);
+
+        }
+
+        if (other.name.Contains("Mushroom"))
+        {
+            hasBeenHit = true;
+            Debug.Log("Mushroom hit");
+            if (enemyManager != null)
+            {
+                enemyManager.playerHits++;
+            }
+            else
+            {
+                Debug.LogError("enemyManager is null!");
+
+            }
+            Destroy(gameObject);
 
         }
     }
