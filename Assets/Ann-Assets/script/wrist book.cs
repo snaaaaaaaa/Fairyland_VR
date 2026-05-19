@@ -9,6 +9,9 @@ public class WristBookController : MonoBehaviour
     public GameObject pageItem1;       // "Collect KeyStone" page
     public GameObject pageItem2;       // "Collect AncientCoin" page
     public GameObject pageComplete;    // "Task Complete" page
+    public AudioSource openSound;
+    public AudioSource flipSound;
+
 
     public int collectedCount = 0;     // public so Pocket.cs can read it
     private bool isOpen = false;
@@ -21,7 +24,9 @@ public class WristBookController : MonoBehaviour
         pageComplete.SetActive(false);
 
         // Open book and show item 1 page on start
-        OpenBook();
+        StartCoroutine(OpenBookAfterDelay(5f));
+
+
     }
 
     void OpenBook()
@@ -31,7 +36,8 @@ public class WristBookController : MonoBehaviour
         bookAnimator.SetTrigger("open");
 
         // Show first page after open animation finishes
-        StartCoroutine(ShowPageAfterDelay(pageItem1, 1f));
+        StartCoroutine(ShowPageAfterDelay(pageItem1, 0.5f));
+        openSound.Play();
     }
 
     // Called by Pocket.cs when a valid item is collected
@@ -45,13 +51,15 @@ public class WristBookController : MonoBehaviour
         {
             // First item collected — flip to item 2 page
             bookAnimator.SetTrigger("flip");
-            StartCoroutine(SwitchPageAfterFlip(pageItem1, pageItem2, 1f));
+            StartCoroutine(SwitchPageAfterFlip(pageItem1, pageItem2, 0.5f));
+            flipSound.Play();
         }
         else if (collectedCount == 2)
         {
             // Second item collected — flip to complete page
             bookAnimator.SetTrigger("flip");
-            StartCoroutine(SwitchPageAfterFlip(pageItem2, pageComplete, 1f));
+            StartCoroutine(SwitchPageAfterFlip(pageItem2, pageComplete, 0.5f));
+            flipSound.Play();
         }
     }
 
@@ -59,6 +67,11 @@ public class WristBookController : MonoBehaviour
     {
         yield return new WaitForSeconds(delay);
         page.SetActive(true);
+    }
+    System.Collections.IEnumerator OpenBookAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        OpenBook();
     }
 
     System.Collections.IEnumerator SwitchPageAfterFlip(GameObject hidePage, GameObject showPage, float delay)
