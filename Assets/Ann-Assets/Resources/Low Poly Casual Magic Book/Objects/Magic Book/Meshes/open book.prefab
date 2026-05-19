@@ -52,6 +52,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: open book
       objectReference: {fileID: 0}
+    - target: {fileID: 953699020860437083, guid: 150a4f31b977b63498d1f2be4a7193b9, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 182d70155d15bd44e8d9c8011761ab49, type: 2}
+    - target: {fileID: 953699020860437083, guid: 150a4f31b977b63498d1f2be4a7193b9, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 182d70155d15bd44e8d9c8011761ab49, type: 2}
+    - target: {fileID: 5089189409274190956, guid: 150a4f31b977b63498d1f2be4a7193b9, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 182d70155d15bd44e8d9c8011761ab49, type: 2}
+    - target: {fileID: 5089189409274190956, guid: 150a4f31b977b63498d1f2be4a7193b9, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 182d70155d15bd44e8d9c8011761ab49, type: 2}
     - target: {fileID: 5866666021909216657, guid: 150a4f31b977b63498d1f2be4a7193b9, type: 3}
       propertyPath: m_Controller
       value: 
