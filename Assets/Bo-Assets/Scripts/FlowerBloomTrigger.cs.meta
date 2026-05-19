@@ -3,7 +3,9 @@ guid: 1e63eccbea56b4434a45d565021756a4
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - bloomAudioSource: {instanceID: 0}
+  - bloomSound: {fileID: 8300000, guid: 04653f9d9e37c4cb88ecdeec7f1dbf7d, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

@@ -1,35 +1,47 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using TMPro;
 
-// This script detects when the player enters a trigger zone
 public class ColliderTrigger : MonoBehaviour
 {
-    // Reference to your SceneLoader script
-    // public SceneLoader sceneLoader;
-
-    //public scene varaibales
     public string NextSceneName;
-    //public TextMeshPro textMeshPro;
-   
-    void Start() {
-          //textMeshPro.text = NextSceneName;
-     }
 
-    // This function is automatically called when another collider enters this trigger
+    [Header("Portal Audio")]
+    [SerializeField] private AudioSource portalAudioSource;
+    [SerializeField] private AudioClip portalSound1;
+
+    private bool isTeleporting = false;
+
     private void OnTriggerEnter(Collider other)
     {
+        if (isTeleporting) return;
+
         Debug.Log("trigger");
-        // Check if the object entering is the player camera
+
         if (other.CompareTag("MainCamera") || other.name.Contains("Camera"))
         {
             Debug.Log("Player entered trigger zone");
 
-            SceneManager.LoadScene(NextSceneName);
+            StartCoroutine(PlaySoundThenLoadScene());
         }
     }
 
-    
+    private IEnumerator PlaySoundThenLoadScene()
+    {
+        isTeleporting = true;
+
+        if (portalAudioSource != null && portalSound1 != null)
+        {
+            portalAudioSource.PlayOneShot(portalSound1);
+
+            // Wait briefly before switching scenes
+            yield return new WaitForSeconds(1.25f);
+        }
+        else
+        {
+            Debug.LogWarning("Portal audio source or PortalSound1 has not been assigned.");
+        }
+
+        SceneManager.LoadScene(NextSceneName);
+    }
 }
