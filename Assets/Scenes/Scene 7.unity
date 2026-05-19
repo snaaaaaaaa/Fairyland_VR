@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.28995517, g: 0.5655459, b: 0.58683735, a: 1}
+  m_IndirectSpecularColor: {r: 0.2899558, g: 0.5655451, b: 0.5868374, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -389,10 +389,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9c23fe67712145098b2fcd510ae564f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  zoneType: 1
-  music1: {fileID: 1828168615}
-  music2: {fileID: 1307773305}
-  whoosh: {fileID: 1006305225}
 --- !u!54 &42751564
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1821,7 +1817,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6598815579406187037, guid: 18ddb545287c546e19cc77dc9fbb2189, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2741,10 +2737,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 9014170783705847996, guid: 13960e190d5430c4b9c610f882055ea5, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 179600112}
+    m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 976c86200fd76fc42a6c4f8a6aba186b, type: 3}
 --- !u!4 &379384898 stripped
@@ -2907,10 +2900,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 9014170783705847996, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1617595343}
+    m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d2b47b60c571b904aac9133de1818718, type: 3}
 --- !u!1 &481104507
@@ -5401,7 +5391,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7313654230448209575, guid: 13960e190d5430c4b9c610f882055ea5, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9168142743249570444, guid: 13960e190d5430c4b9c610f882055ea5, type: 3}
       propertyPath: m_MoveSpeed
@@ -5538,7 +5528,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7313654230448209575, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -13601,10 +13591,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9c23fe67712145098b2fcd510ae564f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  zoneType: 0
-  music1: {fileID: 1828168615}
-  music2: {fileID: 1307773305}
-  whoosh: {fileID: 1006305225}
 --- !u!54 &1860496750
 Rigidbody:
   m_ObjectHideFlags: 0
