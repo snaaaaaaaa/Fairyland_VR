@@ -122,3 +122,5 @@ MonoBehaviour:
   rewardPrefab: {fileID: 2254807153224287088, guid: 33e2680b999375f4fbed93d0c29cbd9a, type: 3}
   spawnPoint: {fileID: 6946706366514874830}
   animalAnimator: {fileID: 0}
+  audioSource: {fileID: 0}
+  eatingSound: {fileID: 8300000, guid: 5a79cb89649ac2b459baa1f58aabe3d8, type: 3}

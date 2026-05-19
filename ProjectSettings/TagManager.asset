@@ -10,7 +10,7 @@ TagManager:
   - flower
   - Mushroom
   - Enemy
-  - Camera0
+  - feather
   layers:
   - Default
   - TransparentFX
