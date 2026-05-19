@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class OpenDoorTrigger : MonoBehaviour
 {
-    public Animator DoorAnim; 
+    public Animator DoorAnim;
     public string OpenCloseAnimBoolName;
 
     private void OnTriggerEnter(Collider other)

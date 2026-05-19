@@ -13,6 +13,8 @@ TagManager:
   - Grass
   - Wand
   - RayInteractor
+  - Key
+  - clover
   layers:
   - Default
   - TransparentFX
@@ -20,7 +22,7 @@ TagManager:
   - glass
   - Water
   - UI
-  - 
+  - clover
   - 
   - 
   - 
