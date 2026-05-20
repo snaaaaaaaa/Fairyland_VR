@@ -68,7 +68,7 @@ public class EnemyManager : MonoBehaviour
         if (enemiesDefeated >= enemiesToDefeated)
         {
             Debug.Log("You win!");
-            WinLoseText.text = "Congratulations! You defeated 15 enemies!";
+            WinLoseText.text = "Congratulations! You defeated 15 enemies! Now lets go back home through the portal";
             gameOver = true;
 
         }
@@ -76,7 +76,7 @@ public class EnemyManager : MonoBehaviour
         if (playerHits >= playerLives)
         {
             Debug.Log("You lose!");
-            WinLoseText.text = "You were attacked by too many enemies!";
+            WinLoseText.text = "You were attacked by too many enemies! Lets go back through the portal to rest";
             gameOver = true;
         }
 

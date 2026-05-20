@@ -10,6 +10,8 @@ public class GestureEventProcessor : MonoBehaviour
     public MagicLine magicLine;
     public Tutorial tutorial;
 
+    public AudioSource spellAudioSource;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -47,6 +49,8 @@ public class GestureEventProcessor : MonoBehaviour
         {
             Debug.Log("Yippeeeee");
             Debug.Log(gestureCompletionData.gestureName);
+
+            spellAudioSource.Play();
 
             // Choosing spell
             switch (gestureCompletionData.gestureName)
