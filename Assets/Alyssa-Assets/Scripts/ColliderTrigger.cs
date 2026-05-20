@@ -17,6 +17,7 @@ public class ColliderTrigger : MonoBehaviour
         if (isTeleporting) return;
 
         Debug.Log("trigger");
+        Debug.Log(other.tag);
 
         if (other.CompareTag("MainCamera") || other.name.Contains("Camera"))
         {
@@ -41,6 +42,8 @@ public class ColliderTrigger : MonoBehaviour
         {
             Debug.LogWarning("Portal audio source or PortalSound1 has not been assigned.");
         }
+
+        Debug.Log("about to load?");
 
         SceneManager.LoadScene(NextSceneName);
     }

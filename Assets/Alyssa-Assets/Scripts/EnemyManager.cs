@@ -63,7 +63,7 @@ public class EnemyManager : MonoBehaviour
 
         }
 
-        Debug.Log(enemiesDefeated);
+        //Debug.Log(enemiesDefeated);
 
         if (enemiesDefeated >= enemiesToDefeated)
         {
@@ -75,7 +75,7 @@ public class EnemyManager : MonoBehaviour
 
         if (playerHits >= playerLives)
         {
-            Debug.Log("You lose!");
+            //Debug.Log("You lose!");
             WinLoseText.text = "You were attacked by too many enemies! Lets go back through the portal to rest";
             gameOver = true;
         }
