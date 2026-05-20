@@ -12,6 +12,8 @@ public class MagicLine : MonoBehaviour
     public GameObject projectile;
     public Transform firePoint, LHFirePoint, RHFirepoint;
     public float projectileSpeed = 30;
+    public float circleRadius = 1f;
+    public float circleExpansionSpeed = 5f;
 
     public Vector3 destination;
     // private bool leftHand;
@@ -67,7 +69,45 @@ public class MagicLine : MonoBehaviour
         InstantiateFanProjectile(firePoint);
     }
 
-    
+    public void ShootCircleProjectile()
+    {
+        Ray ray = cam.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
+        RaycastHit hit;
+
+        if (Physics.Raycast(ray, out hit))
+        {
+            destination = hit.point;
+        }
+        else
+        {
+            destination = ray.GetPoint(1000);
+        }
+
+        // Instantiate a circle of projectiles around the fire point and shoot them forward
+        int circleCount = 12; // number of projectiles in the circle
+
+        Vector3 forward = firePoint.forward;
+        if (forward == Vector3.zero)
+        {
+            forward = cam.transform.forward;
+        }
+
+        Vector3 right = Vector3.Cross(Vector3.up, forward).normalized;
+        Vector3 up = Vector3.Cross(forward, right).normalized;
+
+        for (int i = 0; i < circleCount; i++)
+        {
+            float angle = i * Mathf.PI * 2 / circleCount;
+            Vector3 offset = right * Mathf.Cos(angle) * circleRadius + up * Mathf.Sin(angle) * circleRadius;
+            Vector3 radialDir = (offset).normalized;
+            Vector3 velocity = forward * projectileSpeed + radialDir * circleExpansionSpeed;
+
+            var projObj = Instantiate(projectile, firePoint.position + offset, Quaternion.LookRotation(velocity)) as GameObject;
+            projObj.GetComponent<Rigidbody>().velocity = velocity;
+        }
+    }
+
+
 
     // void InstantiateProjectile(Transform firePoint)
     void InstantiateProjectile(Transform firePoint)
@@ -87,7 +127,8 @@ public class MagicLine : MonoBehaviour
         projectileObj.GetComponent<Rigidbody>().velocity = direction * projectileSpeed;
     }
 
-    void InstantiateFanProjectile(Transform firePoint){
+    void InstantiateFanProjectile(Transform firePoint)
+    {
         if (fanCount <= 0) return;
 
         // base direction from fire point to destination

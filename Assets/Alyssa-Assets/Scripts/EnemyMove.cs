@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class EnemyMove : MonoBehaviour
 {
-    public float speed = 1f;
+    public float speed = 1.5f;
 
     public EnemyManager enemyManager;
     Vector3 targetPosition;
     private bool hasBeenHit = false;
+    public AudioSource damage;
 
     void Start()
     {
@@ -42,6 +43,7 @@ public class EnemyMove : MonoBehaviour
             if (enemyManager != null)
             {
                 enemyManager.enemiesDefeated++;
+                damage.Play();
             }
             else
             {
