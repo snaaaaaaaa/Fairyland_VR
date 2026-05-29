@@ -5347,7 +5347,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4134505312059479865, guid: 13960e190d5430c4b9c610f882055ea5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.6
+      value: -0.03
       objectReference: {fileID: 0}
     - target: {fileID: 4134505312059479865, guid: 13960e190d5430c4b9c610f882055ea5, type: 3}
       propertyPath: m_LocalPosition.z
@@ -9663,7 +9663,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6598815579406187037, guid: 18ddb545287c546e19cc77dc9fbb2189, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -15966,13 +15966,14 @@ PrefabInstance:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 868003077}
+  - {fileID: 1291832905}
   - {fileID: 963194228}
   - {fileID: 705507995}
   - {fileID: 1563322702}
   - {fileID: 695965766}
   - {fileID: 1452634126}
   - {fileID: 307091370}
-  - {fileID: 1291832905}
   - {fileID: 223268090}
   - {fileID: 1163494716}
   - {fileID: 3881556949073912906}
@@ -15983,7 +15984,6 @@ SceneRoots:
   - {fileID: 1632954036}
   - {fileID: 139218494}
   - {fileID: 893990013}
-  - {fileID: 868003077}
   - {fileID: 230088115}
   - {fileID: 2116679341}
   - {fileID: 845482974}
